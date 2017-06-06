@@ -1,0 +1,42 @@
+#calculator {
+    margin: auto;
+    border: 1px black solid;
+    width: 500px;
+    position: relative;
+}
+
+#display {
+    border: 1px black solid;
+    text-align: right;
+    margin: 10px;
+    padding: 5px;
+    padding-top: 10px;
+    font-size: 20px;
+    font-family: 'Orbitron', sans-serif;
+}
+
+#buttons {
+    margin: 2px;
+    width: 99%;
+    height: 86%;
+}
+
+.digit, #float_point {
+    border: 1px black solid;
+    padding: 10px;
+    margin: 10px;
+    float: left;
+}
+
+.operation, #equals, #clear {
+    border: 1px black solid;
+    padding: 10px;
+    margin: 10px;
+    float: right;
+}
+
+.rows {
+    margin: 2px;
+    width: 99%;
+    height: 75px;
+}
