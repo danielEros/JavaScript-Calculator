@@ -1,42 +1,106 @@
+html {
+    background: url(background.jpg) fixed no-repeat 100%;
+}
+
+body {
+    margin: auto;
+    margin-top: 2%;
+    width : 980px;
+    font-size : 1.2em;
+    background-color : white;
+    padding : 10px 30px;
+    padding-bottom: 2%;
+    border-radius: 1%;
+}
+
 #calculator {
     margin: auto;
-    border: 1px black solid;
+    border: 3px black solid;
     width: 500px;
     position: relative;
+    background-color: #10ef56;
 }
 
 #display {
-    border: 1px black solid;
+    border: 3px black solid;
     text-align: right;
     margin: 10px;
     padding: 5px;
     padding-top: 10px;
     font-size: 20px;
     font-family: 'Orbitron', sans-serif;
+    background-color: #cbf2ef;
 }
 
 #buttons {
     margin: 2px;
     width: 99%;
     height: 86%;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: bold;
 }
 
 .digit, #float_point {
-    border: 1px black solid;
+    border: 3px black solid;
+    border-radius: 10%;
     padding: 10px;
     margin: 10px;
     float: left;
+    background-color: #97c3ed;
+}
+
+.digit:hover, #float_point:hover {
+    background-color: #dee7ef;
 }
 
 .operation, #equals, #clear {
-    border: 1px black solid;
+    border: 3px black solid;
+    border-radius: 10%;
     padding: 10px;
     margin: 10px;
     float: right;
 }
 
+.operation {
+    background-color: #efb028;
+}
+
+.operation:hover {
+    background-color: #efdaac;
+}
+
+#clear {
+    background-color: #ef0f1e;
+}
+
+#clear:hover {
+    background-color: #efa2b1;
+}
+
+#equals {
+    background-color: #ef37c1;
+}
+
+#equals:hover {
+    background-color: #ef99da;
+}
 .rows {
     margin: 2px;
     width: 99%;
     height: 75px;
+}
+
+p, h2 {
+    font-family: 'Jura', sans-serif;
+    font-size: 1.4em;
+}
+
+a {
+    text-decoration: none;
+    color: #af2b5c;
+    font-weight: bold;
+}
+
+a:visited {
+    color: #f2b21d;
 }
