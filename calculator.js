@@ -1,14 +1,14 @@
 function main(){
     localStorage.setItem('floatAdded', 'false');
-    arrayOfQueries = ['.digit', '.operation', '#equals', '#clear', '#float_point'];
+    var arrayOfQueries = ['.digit', '.operation', '#equals', '#clear', '#float_point'];
     for(var i=0; i<arrayOfQueries.length; i++){
         $(arrayOfQueries[i]).on('click', handleClick);
     }
 }
 
 function handleClick(event){
-    displayedText = $('#display').text();
-    newText = $(this).text();
+    var displayedText = $('#display').text();
+    var newText = $(this).text();
     if ($.isNumeric(newText)){
         if (displayedText === '0' || displayedText.includes('=')){
             $('#display').text(newText);
@@ -25,7 +25,7 @@ function handleClick(event){
             localStorage.setItem('floatAdded', 'false');
         }
     } else if (newText === 'C'){
-        $('#display').text(0);
+        $('#display').text('0');
         localStorage.setItem('floatAdded', false);
     } else if (newText === '.'){
         var floatAdded = eval(localStorage.getItem('floatAdded'));
