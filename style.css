@@ -49,7 +49,7 @@ body {
     background-color: #97c3ed;
 }
 
-.digit:hover, #float_point:hover {
+.digit:active, #float_point:active {
     background-color: #dee7ef;
 }
 
@@ -65,7 +65,7 @@ body {
     background-color: #efb028;
 }
 
-.operation:hover {
+.operation:active {
     background-color: #efdaac;
 }
 
@@ -73,7 +73,7 @@ body {
     background-color: #ef0f1e;
 }
 
-#clear:hover {
+#clear:active {
     background-color: #efa2b1;
 }
 
@@ -81,7 +81,7 @@ body {
     background-color: #ef37c1;
 }
 
-#equals:hover {
+#equals:active {
     background-color: #ef99da;
 }
 .rows {

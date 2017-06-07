@@ -36,7 +36,7 @@ function handleClearClick(event){
 
 function handleFoatPointClick(event){
     var floatAdded = eval(localStorage.getItem('floatAdded'));
-    if (!(floatAdded)) {
+    if (!(floatAdded) && !($('#display').text().includes('='))) {
         $('#display').text($('#display').text() + '.');
         localStorage.setItem('floatAdded', 'true');
     }
