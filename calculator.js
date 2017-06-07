@@ -8,25 +8,29 @@ function main(){
 }
 
 function handleDigitClick(event){
-    if ($('#display').text() === '0' || $('#display').text().includes('=')){
-        $('#display').text($(this).text());
-    } else {
-        if (shortNumber($('#display').text())){
-            $('#display').text($('#display').text() + $(this).text());
-        }
+    displayedText = $('#display').text();
+    newText = $(this).text();
+    if (displayedText === '0' || displayedText.includes('=')){
+        $('#display').text(newText);
+    } else if (isShortNumber(displayedText)){
+        $('#display').text(displayedText + newText);
     }
 }
 
 function handleOperationClick(event){
-    if ($.isNumeric($('#display').text()[$('#display').text().length-1]) && !($('#display').text().includes('='))){
-        $('#display').text($('#display').text() + ' ' + $(this).text() + ' ');
+    displayedText = $('#display').text();
+    newText = $(this).text();
+    if ($.isNumeric(displayedText[displayedText.length-1]) && !(displayedText.includes('='))){
+        $('#display').text(displayedText + ' ' + newText + ' ');
         localStorage.setItem('floatAdded', 'false');
     }
 }
 
 function handleEqualsClick(event){
-    if ($.isNumeric($('#display').text()[$('#display').text().length-1]) && !($('#display').text().includes('='))){
-        $('#display').html($('#display').text() + ' = ' + '<strong>' + eval(($('#display').text())) + '</strong>');
+    displayedText = $('#display').text();
+    newText = $(this).text();
+    if ($.isNumeric(displayedText[displayedText.length-1]) && !(displayedText.includes('='))){
+        $('#display').html(displayedText + ' = ' + '<strong>' + eval(displayedText) + '</strong>');
         localStorage.setItem('floatAdded', false);
     }
 }
@@ -37,14 +41,15 @@ function handleClearClick(event){
 }
 
 function handleFoatPointClick(event){
+    displayedText = $('#display').text();
     var floatAdded = eval(localStorage.getItem('floatAdded'));
-    if (!(floatAdded) && !($('#display').text().includes('=')) && shortNumber($('#display').text())) {
-        $('#display').text($('#display').text() + '.');
+    if (!(floatAdded) && !(displayedText.includes('=')) && isShortNumber(displayedText)) {
+        $('#display').text(displayedText + '.');
         localStorage.setItem('floatAdded', 'true');
     }
 }
 
-function shortNumber(numberToCheck){
+function isShortNumber(numberToCheck){
     if (numberToCheck.includes(' ')){
         var startIndex = numberToCheck.lastIndexOf(' ') + 1;
     } else {
