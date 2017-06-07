@@ -11,7 +11,9 @@ function handleDigitClick(event){
     if ($('#display').text() === '0' || $('#display').text().includes('=')){
         $('#display').text($(this).text());
     } else {
-        $('#display').text($('#display').text() + $(this).text());
+        if (shortNumber($('#display').text())){
+            $('#display').text($('#display').text() + $(this).text());
+        }
     }
 }
 
@@ -36,10 +38,19 @@ function handleClearClick(event){
 
 function handleFoatPointClick(event){
     var floatAdded = eval(localStorage.getItem('floatAdded'));
-    if (!(floatAdded) && !($('#display').text().includes('='))) {
+    if (!(floatAdded) && !($('#display').text().includes('=')) && shortNumber($('#display').text())) {
         $('#display').text($('#display').text() + '.');
         localStorage.setItem('floatAdded', 'true');
     }
+}
+
+function shortNumber(numberToCheck){
+    if (numberToCheck.includes(' ')){
+        var startIndex = numberToCheck.lastIndexOf(' ') + 1;
+    } else {
+        var startIndex = 0;
+    }
+    return (numberToCheck.length - startIndex < 12);
 }
 
 $(document).ready(main);
